@@ -57,11 +57,15 @@ function formatDuration(months: number) {
   return parts.join(" ");
 }
 
-function groupDateRange(group: CompanyGroup) {
+function groupDuration(group: CompanyGroup) {
   const latestRole = parseDateRange(group.roles[0].dates);
   const earliestRole = parseDateRange(group.roles[group.roles.length - 1].dates);
   const totalMonths = monthIndex(latestRole.endLabel) - monthIndex(earliestRole.startLabel) + 1;
-  return `${earliestRole.startLabel} – ${latestRole.endLabel} · ${formatDuration(totalMonths)}`;
+  return formatDuration(totalMonths);
+}
+
+function roleDuration(dates: string) {
+  return dates.split("·")[1]?.trim() ?? "";
 }
 
 function roleDateRange(dates: string) {
@@ -90,6 +94,33 @@ function Chevron() {
     >
       <path d="m6 9 6 6 6-6" />
     </svg>
+  );
+}
+
+function RoleHeader({
+  role,
+  companyBadge,
+}: {
+  role: ExperienceRole;
+  companyBadge?: string;
+}) {
+  return (
+    <div className="flex flex-col gap-1">
+      <div className="flex md:flex-row flex-col md:gap-3 gap-1 md:items-center items-start">
+        <span>{role.title}</span>
+        {companyBadge && (
+          <span className="text-sm font-medium text-neutral-200 px-2 border border-[#6F8CCA]/25 rounded-full flex gap-2 items-center bg-gradient-to-r from-[#6F8CCA]/15 to-transparent">
+            {companyBadge}
+          </span>
+        )}
+      </div>
+      <p className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-400">
+        {roleDateRange(role.dates)}
+      </p>
+      <p className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-500">
+        {role.location}
+      </p>
+    </div>
   );
 }
 
@@ -135,7 +166,7 @@ export default function ExperienceTimeline() {
         {groups.map((group, gi) => {
           const isLastGroup = gi === groups.length - 1;
           const isGrouped = group.roles.length > 1;
-          const dateLabel = isGrouped ? groupDateRange(group) : group.roles[0].dates;
+          const durationLabel = isGrouped ? groupDuration(group) : roleDuration(group.roles[0].dates);
 
           return (
             <div
@@ -143,7 +174,7 @@ export default function ExperienceTimeline() {
               className="flex md:flex-row flex-col gap-3 items-start relative md:pl-0 pl-6"
             >
               <span className="md:py-4 pt-4 font-mono text-xs uppercase tracking-wide text-neutral-300 md:w-40 lg:w-44 shrink-0">
-                {dateLabel}
+                {durationLabel}
               </span>
 
               <div className="md:relative absolute left-0 flex flex-col h-full items-center md:pt-6 pt-4">
@@ -169,13 +200,7 @@ export default function ExperienceTimeline() {
                       {group.roles.map((role, ri) => (
                         <details className="acc" open={gi === 0 && ri === 0} key={ri}>
                           <summary className="flex items-start justify-between gap-5 px-4 py-3 text-neutral-50 font-medium text-sm transition duration-200 hover:bg-white/5">
-                            <div className="flex flex-col gap-1">
-                              <span>{role.title}</span>
-                              <p className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-500">
-                                {role.location}
-                                <span className="text-neutral-600"> · {roleDateRange(role.dates)}</span>
-                              </p>
-                            </div>
+                            <RoleHeader role={role} />
                             <Chevron />
                           </summary>
                           <div className="px-4 pb-4 space-y-3">
@@ -187,18 +212,8 @@ export default function ExperienceTimeline() {
                   </div>
                 ) : (
                   <details className="acc" open={gi === 0}>
-                    <summary className="flex items-center justify-between gap-5 border border-white/10 rounded-xl px-4 py-3 bg-neutral-800 text-neutral-50 font-semibold text-base shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] transition duration-200 hover:border-[#6F8CCA]/40">
-                      <div className="flex flex-col gap-1.5">
-                        <div className="flex md:flex-row flex-col md:gap-5 gap-2 md:items-center items-start">
-                          {group.roles[0].title}
-                          <span className="text-sm font-medium text-neutral-200 px-2 border border-[#6F8CCA]/25 rounded-full flex gap-2 items-center bg-gradient-to-r from-[#6F8CCA]/15 to-transparent">
-                            {group.company}
-                          </span>
-                        </div>
-                        <p className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-400">
-                          {group.roles[0].location}
-                        </p>
-                      </div>
+                    <summary className="flex items-start justify-between gap-5 border border-white/10 rounded-xl px-4 py-3 bg-neutral-800 text-neutral-50 font-semibold text-base shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] transition duration-200 hover:border-[#6F8CCA]/40">
+                      <RoleHeader role={group.roles[0]} companyBadge={group.company} />
                       <Chevron />
                     </summary>
 
