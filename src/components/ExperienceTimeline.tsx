@@ -64,6 +64,11 @@ function groupDateRange(group: CompanyGroup) {
   return `${earliestRole.startLabel} – ${latestRole.endLabel} · ${formatDuration(totalMonths)}`;
 }
 
+function roleDateRange(dates: string) {
+  const { startLabel, endLabel } = parseDateRange(dates);
+  return `${startLabel} – ${endLabel}`;
+}
+
 function DiamondBullet() {
   return (
     <svg width="8" height="8" viewBox="0 0 24 24" fill="#d0d0d0" className="mx-auto shrink-0">
@@ -168,6 +173,7 @@ export default function ExperienceTimeline() {
                               <span>{role.title}</span>
                               <p className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-500">
                                 {role.location}
+                                <span className="text-neutral-600"> · {roleDateRange(role.dates)}</span>
                               </p>
                             </div>
                             <Chevron />
