@@ -62,7 +62,7 @@ export default function ExperienceTimeline() {
 
               <div className="flex-1 relative w-full p-1">
                 <details className="acc" open={i === 0}>
-                  <summary className="flex items-center justify-between gap-5 border border-white/10 rounded-xl px-4 py-3 bg-neutral-800 text-neutral-50 font-semibold text-base transition">
+                  <summary className="flex items-center justify-between gap-5 border border-white/10 rounded-xl px-4 py-3 bg-neutral-800 text-neutral-50 font-semibold text-base shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] transition">
                     <div className="flex md:flex-row flex-col md:gap-5 gap-2 md:items-center items-start">
                       {role.title}
                       <span className="text-sm font-medium text-neutral-200 px-2 border border-[#6F8CCA]/25 rounded-full flex gap-2 items-center bg-gradient-to-r from-[#6F8CCA]/15 to-transparent">
@@ -82,7 +82,7 @@ export default function ExperienceTimeline() {
                     </svg>
                   </summary>
 
-                  <div className="mt-2 px-6 py-4 bg-neutral-800 rounded-2xl border border-[#6F8CCA]/25 space-y-3">
+                  <div className="mt-2 px-6 py-4 bg-neutral-800 rounded-2xl border border-[#6F8CCA]/25 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] space-y-3">
                     <p className="text-xs font-mono uppercase tracking-wide text-neutral-400">
                       {role.location}
                     </p>

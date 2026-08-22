@@ -35,7 +35,7 @@ export default function Certifications() {
         {honors.map((honor, idx) => (
           <div
             key={idx}
-            className="md:flex-1 flex items-center gap-4 justify-start px-6 py-4 rounded-xl border border-white/15 bg-neutral-800"
+            className="md:flex-1 flex items-center gap-4 justify-start px-6 py-4 rounded-xl border border-white/15 bg-neutral-800 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)]"
           >
             <TrophyIcon />
             <div className="text-left min-w-0">
