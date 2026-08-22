@@ -173,18 +173,18 @@ export default function ExperienceTimeline() {
               key={`${group.company}-${gi}`}
               className="flex md:flex-row flex-col gap-3 items-start relative md:pl-0 pl-6"
             >
-              <span className="md:py-4 pt-4 font-mono text-xs uppercase tracking-wide text-neutral-300 md:w-40 lg:w-44 shrink-0">
+              <span className="md:pt-6 pt-4 font-mono text-xs font-semibold uppercase tracking-wide text-[#6F8CCA] md:w-24 lg:w-28 md:text-right shrink-0">
                 {durationLabel}
               </span>
 
               <div className="md:relative absolute left-0 flex flex-col h-full items-center md:pt-6 pt-4">
                 {!isLastGroup && (
-                  <div className="absolute left-1/2 -translate-x-1/2 bg-[#6F8CCA] w-0.5 h-full top-6" />
+                  <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full top-6 bg-gradient-to-b from-[#6F8CCA] via-[#6F8CCA]/50 to-[#6F8CCA]/10" />
                 )}
                 <div
                   className={`relative z-10 size-3.5 rounded-full border-2 ${
                     gi === 0
-                      ? "bg-[#6F8CCA] border-white/75 scale-110"
+                      ? "bg-[#6F8CCA] border-white/75 scale-110 shadow-[0_0_0_4px_rgba(111,140,202,0.18)]"
                       : "bg-neutral-900 border-[#6F8CCA]"
                   }`}
                 />
