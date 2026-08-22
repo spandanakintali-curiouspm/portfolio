@@ -23,7 +23,7 @@ export default function ProfileHeader() {
   }, []);
 
   return (
-    <section className="relative flex items-center justify-between">
+    <section className="animate-fade-in-up relative flex items-center justify-between">
       <div className="flex sm:flex-row flex-col sm:items-center sm:gap-2.5 gap-1 text-neutral-300 font-mono text-sm font-semibold uppercase">
         <span suppressHydrationWarning>{time ?? "--:--:--"}</span>
         <span>{profile.location}</span>
@@ -31,7 +31,7 @@ export default function ProfileHeader() {
 
       <a
         href={`mailto:${profile.email}`}
-        className="inline-flex items-center gap-2 rounded-[8px] text-sm font-medium px-4 py-2 border border-white/15 bg-neutral-800 text-neutral-100 hover:bg-white/5 transition"
+        className="inline-flex items-center gap-2 rounded-[8px] text-sm font-medium px-4 py-2 border border-white/15 bg-neutral-800 text-neutral-100 transition duration-200 hover:bg-white/5 hover:border-white/30 hover:-translate-y-0.5 active:translate-y-0"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2" />

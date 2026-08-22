@@ -16,7 +16,7 @@ export default function Education() {
         {education.map((edu) => (
           <div
             key={edu.school}
-            className="rounded-2xl border border-white/10 bg-neutral-800 p-6 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)]"
+            className="rounded-2xl border border-white/10 bg-neutral-800 p-6 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] transition duration-200 hover:border-[#6F8CCA]/40 hover:-translate-y-0.5"
           >
             <h4 className="text-lg font-semibold text-neutral-50">{edu.school}</h4>
             <p className="mt-1 text-sm text-neutral-300">{edu.degree}</p>

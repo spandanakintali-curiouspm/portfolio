@@ -5,7 +5,7 @@ const tiles = [...skills, ...languages.map((l) => l.name)];
 function Tile({ label }: { label: string }) {
   return (
     <span
-      className="h-16 min-w-28 px-3 rounded-[8px] border bg-neutral-800 grid place-items-center text-center font-mono text-xs font-semibold text-neutral-300 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] shrink-0"
+      className="h-16 min-w-28 px-3 rounded-[8px] border bg-neutral-800 grid place-items-center text-center font-mono text-xs font-semibold text-neutral-300 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] shrink-0 transition duration-200 hover:border-[#6F8CCA] hover:text-neutral-50 hover:-translate-y-0.5"
       style={{ borderColor: "#6F8CCA40" }}
     >
       {label}
