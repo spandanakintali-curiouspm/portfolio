@@ -25,7 +25,7 @@ export default function ProfileIntro() {
             style={{ "--delay": "0.08s" } as React.CSSProperties}
             className="animate-fade-in-up font-semibold space-y-2"
           >
-            <h1 className="text-[32px] md:text-[36px] text-neutral-50 leading-none tracking-tight">{profile.name}</h1>
+            <h1 className="font-serif font-semibold text-[36px] md:text-[42px] text-neutral-50 leading-none tracking-tight">{profile.name}</h1>
             <h2 className="uppercase text-[#E8B04B] font-mono text-base">{profile.role}</h2>
           </div>
 

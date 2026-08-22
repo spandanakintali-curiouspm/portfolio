@@ -4,6 +4,8 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
   --font-marker: var(--font-permanent-marker), cursive;
+  --font-serif: var(--font-fraunces), ui-serif, serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, sans-serif;
 }
 
 @theme {
@@ -50,7 +52,7 @@ body {
 }
 
 .bg-dots {
-  background-color: #000000;
+  background-color: #08090b;
 }
 
 /* Marquee edge fade */

@@ -33,7 +33,7 @@ export default function DynamicTagline() {
         </h3>
         <div className="relative h-12 grid place-items-center">
           <p
-            className={`absolute w-full text-3xl md:text-4xl tracking-tight text-neutral-200 transition-all duration-200 ${
+            className={`absolute w-full font-display font-medium text-3xl md:text-4xl tracking-tight text-neutral-200 transition-all duration-200 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
             }`}
           >
