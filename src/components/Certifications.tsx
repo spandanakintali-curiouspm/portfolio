@@ -2,7 +2,7 @@ import { honors } from "@/lib/data";
 
 function TrophyIcon() {
   return (
-    <svg className="size-6 shrink-0 text-neutral-700" viewBox="0 0 24 25" fill="none">
+    <svg className="size-6 shrink-0 text-neutral-300" viewBox="0 0 24 25" fill="none">
       <path
         d="M18.5 18.338C19.5305 18.1867 20.2627 17.8941 20.8284 17.3284C22 16.1569 22 14.2712 22 10.5C22 6.72876 22 4.84315 20.8284 3.67157C19.6569 2.5 17.7712 2.5 14 2.5H10C6.22876 2.5 4.34315 2.5 3.17157 3.67157C2 4.84315 2 6.72876 2 10.5C2 14.2712 2 16.1569 3.17157 17.3284C3.97975 18.1366 5.1277 18.3873 7 18.465"
         stroke="currentColor"
@@ -26,7 +26,7 @@ export default function Certifications() {
   return (
     <section className="relative flex flex-col gap-4">
       <div className="relative z-10 space-y-2">
-        <h3 className="eyebrow text-sm text-neutral-900">
+        <h3 className="eyebrow text-sm text-neutral-50">
           Honors &amp; Awards
         </h3>
       </div>
@@ -35,14 +35,14 @@ export default function Certifications() {
         {honors.map((honor, idx) => (
           <div
             key={idx}
-            className="md:flex-1 flex items-center gap-4 justify-start px-6 py-4 rounded-xl border border-black/15 bg-white"
+            className="md:flex-1 flex items-center gap-4 justify-start px-6 py-4 rounded-xl border border-white/15 bg-neutral-800"
           >
             <TrophyIcon />
             <div className="text-left min-w-0">
-              <p className="font-semibold text-base leading-none text-neutral-900 truncate">
+              <p className="font-semibold text-base leading-none text-neutral-50 truncate">
                 {honor.title}
               </p>
-              <p className="text-sm text-neutral-500 leading-none mt-1 truncate">{honor.issuer}</p>
+              <p className="text-sm text-neutral-400 leading-none mt-1 truncate">{honor.issuer}</p>
             </div>
           </div>
         ))}

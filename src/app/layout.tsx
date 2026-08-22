@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${geistMono.variable} ${permanentMarker.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="bg-dots min-h-full flex flex-col text-neutral-900">
+      <body className="bg-dots min-h-full flex flex-col text-neutral-50">
         {children}
         <WeatherWidget />
       </body>

@@ -22,18 +22,6 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --border: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-}
-
-.dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
@@ -42,6 +30,18 @@
   --muted-foreground: oklch(0.708 0 0);
   --border: oklch(1 0 0 / 12%);
   --ring: oklch(0.708 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+}
+
+.light {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --border: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
 }
 
 body {
@@ -49,10 +49,10 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Signature dotted page background */
+/* Signature dotted page background (dark) */
 .bg-dots {
-  background-color: #f0f2f5;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 2px, transparent 2px);
+  background-color: #0f1115;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px);
   background-size: 28px 28px;
 }
 
@@ -94,7 +94,7 @@ details.acc > summary::-webkit-details-marker {
 }
 
 details.acc[open] > summary {
-  box-shadow: 0 1px 12px 0 #00000014;
+  box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.4);
   border-color: rgba(111, 160, 202, 0.5);
 }
 
@@ -110,6 +110,6 @@ details.acc[open] .chev {
 }
 
 .glow-soft {
-  background: radial-gradient(ellipse at center, #ffffff 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(111, 140, 202, 0.22) 0%, transparent 70%);
   filter: blur(40px);
 }

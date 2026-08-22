@@ -31,7 +31,7 @@ export default function ProfileHeader() {
 
       <a
         href={`mailto:${profile.email}`}
-        className="inline-flex items-center gap-2 rounded-[8px] text-sm font-medium px-4 py-2 border border-black/15 bg-white text-neutral-900 hover:bg-black/5 transition"
+        className="inline-flex items-center gap-2 rounded-[8px] text-sm font-medium px-4 py-2 border border-white/15 bg-neutral-800 text-neutral-100 hover:bg-white/5 transition"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2" />

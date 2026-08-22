@@ -16,7 +16,7 @@ function displayBullets(role: ExperienceRole): DisplayBullet[] {
 
 function DiamondBullet() {
   return (
-    <svg width="8" height="8" viewBox="0 0 24 24" fill="#484848" className="mx-auto shrink-0">
+    <svg width="8" height="8" viewBox="0 0 24 24" fill="#d0d0d0" className="mx-auto shrink-0">
       <path d="M12 2 22 12 12 22 2 12z" />
     </svg>
   );
@@ -26,10 +26,10 @@ export default function ExperienceTimeline() {
   return (
     <section className="relative flex flex-col gap-8">
       <div className="relative z-10 space-y-2">
-        <h3 className="eyebrow text-sm text-neutral-900">
+        <h3 className="eyebrow text-sm text-neutral-50">
           Experience
         </h3>
-        <p className="text-neutral-700 text-base tracking-tight">
+        <p className="text-neutral-300 text-base tracking-tight">
           From enterprise AI governance to HR platforms — the roles along the way.
         </p>
       </div>
@@ -55,17 +55,17 @@ export default function ExperienceTimeline() {
                   className={`relative z-10 size-3.5 rounded-full border-2 ${
                     i === 0
                       ? "bg-[#6F8CCA] border-white/75 scale-110"
-                      : "bg-white border-[#6F8CCA]"
+                      : "bg-neutral-900 border-[#6F8CCA]"
                   }`}
                 />
               </div>
 
               <div className="flex-1 relative w-full p-1">
                 <details className="acc" open={i === 0}>
-                  <summary className="flex items-center justify-between gap-5 border border-black/10 rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold text-base transition">
+                  <summary className="flex items-center justify-between gap-5 border border-white/10 rounded-xl px-4 py-3 bg-neutral-800 text-neutral-50 font-semibold text-base transition">
                     <div className="flex md:flex-row flex-col md:gap-5 gap-2 md:items-center items-start">
                       {role.title}
-                      <span className="text-sm font-medium text-black/70 px-2 border border-[#6F8CCA]/25 rounded-full flex gap-2 items-center bg-gradient-to-r from-[#6F8CCA]/10 to-white">
+                      <span className="text-sm font-medium text-neutral-200 px-2 border border-[#6F8CCA]/25 rounded-full flex gap-2 items-center bg-gradient-to-r from-[#6F8CCA]/15 to-transparent">
                         {role.company}
                       </span>
                     </div>
@@ -82,12 +82,12 @@ export default function ExperienceTimeline() {
                     </svg>
                   </summary>
 
-                  <div className="mt-2 px-6 py-4 bg-white rounded-2xl border border-[#6F8CCA]/25 space-y-3">
+                  <div className="mt-2 px-6 py-4 bg-neutral-800 rounded-2xl border border-[#6F8CCA]/25 space-y-3">
                     <p className="text-xs font-mono uppercase tracking-wide text-neutral-400">
                       {role.location}
                     </p>
                     {role.summary && (
-                      <p className="text-neutral-700 text-sm leading-relaxed tracking-tight">
+                      <p className="text-neutral-300 text-sm leading-relaxed tracking-tight">
                         {role.summary}
                       </p>
                     )}
@@ -97,7 +97,7 @@ export default function ExperienceTimeline() {
                           <div className="pt-1.5">
                             <DiamondBullet />
                           </div>
-                          <div className="text-neutral-700 text-sm leading-relaxed tracking-tight">
+                          <div className="text-neutral-300 text-sm leading-relaxed tracking-tight">
                             {b.bold && <span className="font-semibold">{b.bold}. </span>}
                             {b.text}
                           </div>

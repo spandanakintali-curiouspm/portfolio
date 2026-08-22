@@ -28,12 +28,12 @@ export default function DynamicTagline() {
   return (
     <section className="py-6 text-center">
       <div className="flex flex-col gap-5">
-        <h3 className="eyebrow text-sm text-neutral-900">
+        <h3 className="eyebrow text-sm text-neutral-50">
           In short
         </h3>
         <div className="relative h-12 grid place-items-center">
           <p
-            className={`absolute w-full text-3xl md:text-4xl tracking-tight text-neutral-500 transition-all duration-200 ${
+            className={`absolute w-full text-3xl md:text-4xl tracking-tight text-neutral-200 transition-all duration-200 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
             }`}
           >

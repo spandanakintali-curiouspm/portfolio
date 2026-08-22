@@ -5,7 +5,7 @@ const tiles = [...skills, ...languages.map((l) => l.name)];
 function Tile({ label }: { label: string }) {
   return (
     <span
-      className="h-16 min-w-28 px-3 rounded-[8px] border bg-white grid place-items-center text-center font-mono text-xs font-semibold text-neutral-600 shrink-0"
+      className="h-16 min-w-28 px-3 rounded-[8px] border bg-neutral-800 grid place-items-center text-center font-mono text-xs font-semibold text-neutral-300 shrink-0"
       style={{ borderColor: "#6F8CCA40" }}
     >
       {label}
@@ -17,10 +17,10 @@ export default function Stack() {
   return (
     <section className="relative flex flex-col gap-6 overflow-hidden">
       <div className="relative z-10 space-y-2">
-        <h3 className="eyebrow text-sm text-neutral-900">
+        <h3 className="eyebrow text-sm text-neutral-50">
           Stack
         </h3>
-        <p className="text-neutral-700 text-base tracking-tight">
+        <p className="text-neutral-300 text-base tracking-tight">
           The skills and languages I bring to product work.
         </p>
       </div>
