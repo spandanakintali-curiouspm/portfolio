@@ -166,9 +166,6 @@ export default function ExperienceTimeline() {
                           <summary className="flex items-start justify-between gap-5 px-4 py-3 text-neutral-50 font-medium text-sm transition duration-200 hover:bg-white/5">
                             <div className="flex flex-col gap-1">
                               <span>{role.title}</span>
-                              <span className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-400">
-                                {role.dates}
-                              </span>
                               <p className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-500">
                                 {role.location}
                               </p>
