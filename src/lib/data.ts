@@ -3,6 +3,7 @@ export const profile = {
   tagline: "Product Management | ISB | Ex-ServiceNow, OpenText, Oracle",
   status: "On an intentional career break — travelling, upskilling, and figuring out what's next.",
   location: "Hyderabad, Telangana, India",
+  coordinates: { latitude: 17.385, longitude: 78.4867 },
   email: "spandanak.2010@gmail.com",
   linkedin: "https://www.linkedin.com/in/spandanakintali",
   summary:
