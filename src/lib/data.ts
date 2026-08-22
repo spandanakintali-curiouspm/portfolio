@@ -27,7 +27,7 @@ export const experience: ExperienceRole[] = [
     company: "ServiceNow",
     title: "Senior Product Manager, Platform",
     dates: "August 2024 – April 2026 · 1 yr 9 mos",
-    location: "India",
+    location: "Hyderabad, Telangana, India",
     summary:
       "Built a Zero-to-One AI Control Tower (AICT) giving enterprises complete visibility into their AI footprint, enabling them to manage the full lifecycle of AI assets while identifying and mitigating risks associated with AI investments.",
     bullets: [
@@ -44,19 +44,11 @@ export const experience: ExperienceRole[] = [
     company: "ServiceNow",
     title: "Senior Product Manager, HR Service Delivery Business Unit",
     dates: "November 2021 – July 2024 · 2 yrs 9 mos",
-    location: "India",
+    location: "Hyderabad, Telangana, India",
     summary:
       "Managed the strategic vision and success of the Employee Document Management product for the HR domain — generating $70M ACV across 150+ enterprise customers.",
-    subBullets: [
-      {
-        heading:
-          "Spearheaded strategic vision and product roadmap for the enterprise document manager module of the HRSD product across 4 major releases",
-        points: [
-          "Achieved product-market fit for document management across the complete Hire-to-Retire HR lifecycle, growing the sales pipeline by 40%.",
-        ],
-      },
-    ],
     bullets: [
+      "Spearheaded strategic vision and product roadmap for the enterprise document manager module of the HRSD product across 4 major releases, achieving product-market fit across the complete Hire-to-Retire HR lifecycle and growing the sales pipeline by 40%.",
       "Collaborated with sales, senior leadership & clients, providing strategic support with tailored collateral, product demos and presentations.",
       "Helped successfully close 10+ deals over $30M, further contributing to multiple upgrade deals and business growth.",
       "Engaged with product leadership & industry leaders to ensure roadmap alignment and incorporate market feedback into the product.",
