@@ -1,23 +1,27 @@
-import About from "@/components/About";
-import Contact from "@/components/Contact";
+import Certifications from "@/components/Certifications";
+import DynamicTagline from "@/components/DynamicTagline";
 import Education from "@/components/Education";
-import Experience from "@/components/Experience";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
+import ProfileHeader from "@/components/ProfileHeader";
+import ProfileIntro from "@/components/ProfileIntro";
+import Quote from "@/components/Quote";
+import Stack from "@/components/Stack";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <main className="flex-1">
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Education />
-        <Contact />
+        <div className="mx-auto max-w-3xl px-5 md:px-8 py-10 flex flex-col gap-16 md:gap-20">
+          <ProfileHeader />
+          <ProfileIntro />
+          <ExperienceTimeline />
+          <Stack />
+          <DynamicTagline />
+          <Certifications />
+          <Education />
+          <Quote />
+        </div>
       </main>
       <Footer />
     </>

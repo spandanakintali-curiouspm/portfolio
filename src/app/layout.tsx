@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono, Permanent_Marker } from "next/font/google";
 import WeatherWidget from "@/components/WeatherWidget";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const permanentMarker = Permanent_Marker({
+  variable: "--font-permanent-marker",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -23,9 +31,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${inter.variable} ${geistMono.variable} ${permanentMarker.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="bg-dots min-h-full flex flex-col text-neutral-900">
         {children}
         <WeatherWidget />
       </body>

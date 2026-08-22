@@ -79,12 +79,12 @@ export default function WeatherWidget() {
   return (
     <div
       title={`${label}${weather.isDefaultLocation ? ` in ${DEFAULT_CITY}` : ""}`}
-      className="fixed bottom-4 right-4 z-40 flex items-center gap-1.5 rounded-full border border-border bg-surface/90 px-3 py-1.5 text-sm shadow-sm backdrop-blur-md"
+      className="fixed bottom-4 right-4 z-40 flex items-center gap-1.5 rounded-full border border-black/15 bg-white/90 px-3 py-1.5 text-sm shadow-[0_1px_12px_0_#00000014] backdrop-blur-md"
     >
       <span aria-hidden>{icon}</span>
-      <span className="font-medium">{weather.temperature}°C</span>
+      <span className="font-medium text-neutral-900">{weather.temperature}°C</span>
       {weather.isDefaultLocation && (
-        <span className="text-muted">· {DEFAULT_CITY}</span>
+        <span className="text-neutral-500">· {DEFAULT_CITY}</span>
       )}
     </div>
   );

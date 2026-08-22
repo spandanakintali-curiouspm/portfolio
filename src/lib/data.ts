@@ -1,5 +1,6 @@
 export const profile = {
   name: "Spandana Kintali",
+  role: "Senior Product Manager",
   tagline: "Product Management | ISB | Ex-ServiceNow, OpenText, Oracle",
   status: "On an intentional career break — travelling, upskilling, and figuring out what's next.",
   location: "Hyderabad, Telangana, India",
@@ -153,4 +154,8 @@ export const languages = [
   { name: "Telugu", level: "Native or Bilingual" },
 ];
 
-export const honors = ["Employee of the Month", "Employee of the Month", "University Topper"];
+export const honors = [
+  { title: "Employee of the Month", issuer: "Oracle · Automation initiative" },
+  { title: "Employee of the Month", issuer: "Oracle · Escalation handling" },
+  { title: "University Topper", issuer: "Amrita Vishwa Vidyapeetham" },
+];
