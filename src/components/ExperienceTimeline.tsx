@@ -52,8 +52,8 @@ function formatDuration(months: number) {
   const yrs = Math.floor(months / 12);
   const mos = months % 12;
   const parts: string[] = [];
-  if (yrs) parts.push(`${yrs} yr${yrs > 1 ? "s" : ""}`);
-  if (mos) parts.push(`${mos} mo${mos > 1 ? "s" : ""}`);
+  if (yrs) parts.push(`${yrs} year${yrs > 1 ? "s" : ""}`);
+  if (mos) parts.push(`${mos} month${mos > 1 ? "s" : ""}`);
   return parts.join(" ");
 }
 
@@ -65,7 +65,8 @@ function groupDuration(group: CompanyGroup) {
 }
 
 function roleDuration(dates: string) {
-  return dates.split("·")[1]?.trim() ?? "";
+  const { startLabel, endLabel } = parseDateRange(dates);
+  return formatDuration(monthIndex(endLabel) - monthIndex(startLabel) + 1);
 }
 
 function roleDateRange(dates: string) {
@@ -114,10 +115,10 @@ function RoleHeader({
           </span>
         )}
       </div>
-      <p className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-400">
+      <p className="text-xs font-mono font-normal tracking-wide text-neutral-400">
         {roleDateRange(role.dates)}
       </p>
-      <p className="text-xs font-mono font-normal uppercase tracking-wide text-neutral-500">
+      <p className="text-xs font-mono font-normal tracking-wide text-neutral-500">
         {role.location}
       </p>
     </div>
@@ -173,7 +174,7 @@ export default function ExperienceTimeline() {
               key={`${group.company}-${gi}`}
               className="flex md:flex-row flex-col gap-3 items-start relative md:pl-0 pl-6"
             >
-              <span className="md:pt-6 pt-4 font-mono text-xs font-semibold uppercase tracking-wide text-[#6F8CCA] md:w-24 lg:w-28 md:text-right shrink-0">
+              <span className="md:pt-6 pt-4 font-mono text-xs font-semibold tracking-wide text-[#6F8CCA] md:w-24 lg:w-28 md:text-right shrink-0">
                 {durationLabel}
               </span>
 
