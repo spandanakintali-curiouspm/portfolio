@@ -20,12 +20,10 @@ export default function Experience() {
             </div>
             <p className="text-sm text-muted">{role.location}</p>
 
-            {role.bullets && (
-              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/85">
-                {role.bullets.map((b, idx) => (
-                  <li key={idx}>{b}</li>
-                ))}
-              </ul>
+            {role.summary && (
+              <p className="mt-3 text-sm italic leading-relaxed text-foreground/80">
+                {role.summary}
+              </p>
             )}
 
             {role.subBullets && (
@@ -43,6 +41,14 @@ export default function Experience() {
                   </div>
                 ))}
               </div>
+            )}
+
+            {role.bullets && (
+              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/85">
+                {role.bullets.map((b, idx) => (
+                  <li key={idx}>{b}</li>
+                ))}
+              </ul>
             )}
           </li>
         ))}

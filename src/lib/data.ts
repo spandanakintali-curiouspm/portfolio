@@ -17,6 +17,7 @@ export interface ExperienceRole {
   title: string;
   dates: string;
   location: string;
+  summary?: string;
   bullets?: ExperienceBullet[];
   subBullets?: { heading: string; points: string[] }[];
 }
@@ -24,9 +25,42 @@ export interface ExperienceRole {
 export const experience: ExperienceRole[] = [
   {
     company: "ServiceNow",
-    title: "Senior Product Manager",
-    dates: "November 2021 – April 2026 · 4 yrs 6 mos",
+    title: "Senior Product Manager, Platform",
+    dates: "August 2024 – April 2026 · 1 yr 9 mos",
     location: "India",
+    summary:
+      "Built a Zero-to-One AI Control Tower (AICT) giving enterprises complete visibility into their AI footprint, enabling them to manage the full lifecycle of AI assets while identifying and mitigating risks associated with AI investments.",
+    bullets: [
+      "Conducted user, domain and competitive research to capture governance process and key personas.",
+      "Led successful delivery of 3P controls in AICT, integrating third-party model provider strategies & empowering customers with data-driven compliance insights for AI systems across Zurich, Australia, and Brazil markets.",
+      "Drove the Long-Term Stability (LTS) model strategy for the financial services sector, enabling customer choice for stable AI models and coordinating cross-team efforts to resolve implementation gaps and align product priorities.",
+      "Established and managed an audit framework for AICT, enabling customers to efficiently handle internal and external audits by capturing comprehensive audit histories and change chains for AI system deployments.",
+      "Championed exception management frameworks for AI model providers and datasets, enhancing the governance framework and compliance posture for companies implementing AICT.",
+      "Spearheaded observability initiatives in AICT, developing proof-of-concept solutions to surface actionable insights on AI system health and enable proactive recommendations for product owners and builders.",
+      "Recognized for leadership and strategic vision with multiple kudos from cross-functional stakeholders; served as Product Advisor during the Create UTG 2025 Hackathon, guiding teams to refine and pitch AI governance solutions.",
+    ],
+  },
+  {
+    company: "ServiceNow",
+    title: "Senior Product Manager, HR Service Delivery Business Unit",
+    dates: "November 2021 – July 2024 · 2 yrs 9 mos",
+    location: "India",
+    summary:
+      "Managed the strategic vision and success of the Employee Document Management product for the HR domain — generating $70M ACV across 150+ enterprise customers.",
+    subBullets: [
+      {
+        heading:
+          "Spearheaded strategic vision and product roadmap for the enterprise document manager module of the HRSD product across 4 major releases",
+        points: [
+          "Achieved product-market fit for document management across the complete Hire-to-Retire HR lifecycle, growing the sales pipeline by 40%.",
+        ],
+      },
+    ],
+    bullets: [
+      "Collaborated with sales, senior leadership & clients, providing strategic support with tailored collateral, product demos and presentations.",
+      "Helped successfully close 10+ deals over $30M, further contributing to multiple upgrade deals and business growth.",
+      "Engaged with product leadership & industry leaders to ensure roadmap alignment and incorporate market feedback into the product.",
+    ],
   },
   {
     company: "Zenoti",
