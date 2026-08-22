@@ -49,11 +49,8 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Signature dotted page background (dark) */
 .bg-dots {
-  background-color: #0f1115;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px);
-  background-size: 28px 28px;
+  background-color: #000000;
 }
 
 /* Marquee edge fade */
@@ -109,7 +106,3 @@ details.acc[open] .chev {
   font-weight: 600;
 }
 
-.glow-soft {
-  background: radial-gradient(ellipse at center, rgba(111, 140, 202, 0.22) 0%, transparent 70%);
-  filter: blur(40px);
-}

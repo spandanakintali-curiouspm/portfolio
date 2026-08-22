@@ -5,11 +5,6 @@ import HighlightText from "./HighlightText";
 export default function ProfileIntro() {
   return (
     <section className="relative flex flex-col gap-8">
-      <div
-        aria-hidden
-        className="absolute inset-0 w-[90vw] max-w-full glow-soft h-[120%] mx-auto left-1/2 -translate-x-1/2 pointer-events-none"
-      />
-
       <div className="size-16 md:size-[120px] rounded-lg overflow-hidden z-10 relative">
         <Image
           src="/avatar.jpg"
