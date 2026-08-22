@@ -1,14 +1,6 @@
+import Image from "next/image";
 import { profile } from "@/lib/data";
 import HighlightText from "./HighlightText";
-
-function initials(name: string) {
-  return name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-}
 
 export default function ProfileIntro() {
   return (
@@ -18,8 +10,15 @@ export default function ProfileIntro() {
         className="absolute inset-0 w-[90vw] max-w-full glow-soft h-[120%] mx-auto left-1/2 -translate-x-1/2 pointer-events-none"
       />
 
-      <div className="size-16 md:size-[120px] rounded-lg bg-gradient-to-br from-[#6F8CCA] to-[#2B2B2B] grid place-items-center text-white text-xl md:text-3xl font-bold z-10 relative">
-        {initials(profile.name)}
+      <div className="size-16 md:size-[120px] rounded-lg overflow-hidden z-10 relative">
+        <Image
+          src="/avatar.png"
+          alt={profile.name}
+          fill
+          sizes="120px"
+          className="object-cover"
+          priority
+        />
       </div>
 
       <div className="flex flex-col gap-4 z-10 relative">
