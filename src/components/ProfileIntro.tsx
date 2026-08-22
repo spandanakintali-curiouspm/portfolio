@@ -25,7 +25,7 @@ export default function ProfileIntro() {
         <div className="flex sm:flex-row flex-col gap-4 items-start justify-between">
           <div className="font-semibold space-y-2">
             <h1 className="text-[28px] text-neutral-50 leading-none">{profile.name}</h1>
-            <h2 className="uppercase text-[#6F8CCA] font-mono text-base">{profile.role}</h2>
+            <h2 className="uppercase text-[#E8B04B] font-mono text-base">{profile.role}</h2>
           </div>
 
           <div className="flex gap-2">
