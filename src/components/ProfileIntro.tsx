@@ -12,7 +12,7 @@ export default function ProfileIntro() {
 
       <div className="size-16 md:size-[120px] rounded-lg overflow-hidden z-10 relative">
         <Image
-          src="/avatar.png"
+          src="/avatar.jpg"
           alt={profile.name}
           fill
           sizes="120px"
