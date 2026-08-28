@@ -8,7 +8,7 @@ export default function ProfileIntro() {
       <div className="flex flex-col gap-10 z-10 relative">
         <div
           style={{ "--delay": "0.08s" } as React.CSSProperties}
-          className="animate-fade-in-up font-semibold space-y-8"
+          className="animate-fade-in-up font-semibold space-y-3"
         >
           <h1 className="font-serif font-semibold text-[2.25rem] md:text-[2.625rem] text-neutral-50 leading-none tracking-tight">{profile.name}</h1>
           <p className="uppercase text-[#00c8c0] font-mono text-base">{profile.role}</p>
