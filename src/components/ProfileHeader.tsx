@@ -1,44 +1,11 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { profile } from "@/lib/data";
 
-function formatTime(date: Date) {
-  return new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Asia/Kolkata",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false,
-  }).format(date);
-}
-
 export default function ProfileHeader() {
-  const [time, setTime] = useState<string | null>(null);
-
-  useEffect(() => {
-    setTime(formatTime(new Date()));
-    const id = setInterval(() => setTime(formatTime(new Date())), 1000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <section className="animate-fade-in-up relative flex items-center justify-between">
-      <div className="flex sm:flex-row flex-col sm:items-center sm:gap-2.5 gap-1 text-neutral-300 font-mono text-sm font-semibold uppercase">
-        <span suppressHydrationWarning>{time ?? "--:--:--"}</span>
-        <span>{profile.location}</span>
-      </div>
-
-      <a
-        href={`mailto:${profile.email}`}
-        className="inline-flex items-center gap-2 rounded-[8px] text-sm font-medium px-4 py-2 border border-white/15 bg-neutral-800 text-neutral-100 transition duration-200 hover:bg-white/5 hover:border-white/30 hover:-translate-y-0.5 active:translate-y-0"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="4" width="20" height="16" rx="2" />
-          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-        </svg>
-        Email
-      </a>
+    <section className="animate-fade-in-up relative flex items-center">
+      <span className="-ml-1 inline-flex items-center rounded-full border border-[#00c8c0]/15 bg-neutral-800 px-3 py-1.5 text-neutral-300 font-mono text-sm font-semibold">
+        {profile.location}
+      </span>
     </section>
   );
 }

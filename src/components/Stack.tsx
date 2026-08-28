@@ -1,12 +1,21 @@
 import { languages, skills } from "@/lib/data";
 
-const tiles = [...skills, ...languages.map((l) => l.name)];
-
-function Tile({ label }: { label: string }) {
+function SkillTile({ label }: { label: string }) {
   return (
     <span
-      className="h-16 min-w-28 px-3 rounded-[8px] border bg-neutral-800 grid place-items-center text-center font-mono text-xs font-semibold text-neutral-300 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] shrink-0 transition duration-200 hover:border-[#6F8CCA] hover:text-neutral-50 hover:-translate-y-0.5"
-      style={{ borderColor: "#6F8CCA40" }}
+      className="h-16 min-w-28 px-4 rounded-[8px] border bg-[#00c8c0]/10 grid place-items-center text-center font-display font-semibold text-sm text-neutral-50 shadow-[0_1px_12px_0_rgba(2,5,12,0.5)] transition duration-200 hover:border-[#00c8c0] hover:bg-[#00c8c0]/15 hover:-translate-y-0.5"
+      style={{ borderColor: "#00c8c070" }}
+    >
+      {label}
+    </span>
+  );
+}
+
+function LanguageTile({ label }: { label: string }) {
+  return (
+    <span
+      className="h-16 min-w-28 px-4 rounded-[8px] border bg-[#6F8CCA]/10 grid place-items-center text-center font-display font-semibold text-sm text-neutral-50 shadow-[0_1px_12px_0_rgba(2,5,12,0.5)] transition duration-200 hover:border-[#6F8CCA] hover:bg-[#6F8CCA]/15 hover:-translate-y-0.5"
+      style={{ borderColor: "#6F8CCA70" }}
     >
       {label}
     </span>
@@ -15,25 +24,30 @@ function Tile({ label }: { label: string }) {
 
 export default function Stack() {
   return (
-    <section className="relative flex flex-col gap-6 overflow-hidden">
+    <section className="relative flex flex-col gap-8">
       <div className="relative z-10 space-y-2">
-        <h3 className="eyebrow text-sm text-neutral-50">
+        <h2 className="eyebrow text-sm text-neutral-50">
           Stack
-        </h3>
+        </h2>
         <p className="text-neutral-300 text-base tracking-tight">
           The skills and languages I bring to product work.
         </p>
       </div>
 
-      <div className="group relative z-10 flex gap-6 overflow-hidden fade-mask p-2">
-        <div className="animate-marquee pause-on-hover flex shrink-0 gap-6">
-          {tiles.map((label) => (
-            <Tile key={label} label={label} />
+      <div className="relative z-10 space-y-3">
+        <h3 className="text-sm font-semibold text-neutral-200">Skills</h3>
+        <div className="flex flex-wrap gap-4">
+          {skills.map((label) => (
+            <SkillTile key={label} label={label} />
           ))}
         </div>
-        <div className="animate-marquee pause-on-hover flex shrink-0 gap-6" aria-hidden="true">
-          {tiles.map((label) => (
-            <Tile key={`dup-${label}`} label={label} />
+      </div>
+
+      <div className="relative z-10 space-y-3">
+        <h3 className="text-sm font-semibold text-neutral-200">Languages</h3>
+        <div className="flex flex-wrap gap-4">
+          {languages.map((l) => (
+            <LanguageTile key={l.name} label={l.name} />
           ))}
         </div>
       </div>

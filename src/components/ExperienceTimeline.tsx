@@ -1,9 +1,8 @@
-import { experience, type ExperienceRole } from "@/lib/data";
+import { experience, profile, type ExperienceRole } from "@/lib/data";
 
-interface DisplayBullet {
-  bold?: string;
-  text: string;
-}
+type DisplayBullet =
+  | { type: "plain"; text: string }
+  | { type: "group"; heading: string; points: string[] };
 
 interface CompanyGroup {
   company: string;
@@ -13,9 +12,9 @@ interface CompanyGroup {
 function displayBullets(role: ExperienceRole): DisplayBullet[] {
   const items: DisplayBullet[] = [];
   role.subBullets?.forEach((sb) => {
-    items.push({ bold: sb.heading, text: sb.points.join(" ") });
+    items.push({ type: "group", heading: sb.heading, points: sb.points });
   });
-  role.bullets?.forEach((b) => items.push({ text: b }));
+  role.bullets?.forEach((b) => items.push({ type: "plain", text: b }));
   return items;
 }
 
@@ -74,23 +73,19 @@ function roleDateRange(dates: string) {
   return `${startLabel} – ${endLabel}`;
 }
 
-function DiamondBullet() {
-  return (
-    <svg width="8" height="8" viewBox="0 0 24 24" fill="#d0d0d0" className="mx-auto shrink-0">
-      <path d="M12 2 22 12 12 22 2 12z" />
-    </svg>
-  );
+function DotBullet() {
+  return <span className="block mx-auto size-1.5 rounded-full bg-[#00c8c0]" />;
 }
 
 function Chevron() {
   return (
     <svg
       className="chev transition-transform shrink-0"
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#989898"
+      stroke="#9aa7b0"
       strokeWidth="2"
     >
       <path d="m6 9 6 6 6-6" />
@@ -101,13 +96,11 @@ function Chevron() {
 function RoleHeader({ role }: { role: ExperienceRole }) {
   return (
     <div className="flex flex-col gap-1">
-      <div className="flex md:flex-row flex-col md:gap-3 gap-1 md:items-center items-start">
-        <span>{role.title}</span>
-      </div>
-      <p className="text-xs font-mono font-normal tracking-wide text-neutral-400">
+      <p className="text-xs font-normal tracking-normal text-[#00c8c0]">
         {roleDateRange(role.dates)}
       </p>
-      <p className="text-xs font-mono font-normal tracking-wide text-neutral-500">
+      <span className="text-sm font-normal text-neutral-300">{role.title}</span>
+      <p className="text-xs font-normal tracking-normal text-neutral-300">
         {role.location}
       </p>
     </div>
@@ -119,20 +112,40 @@ function RoleBody({ role }: { role: ExperienceRole }) {
   return (
     <>
       {role.summary && (
-        <p className="text-neutral-300 text-sm leading-relaxed tracking-tight">{role.summary}</p>
+        <p className="text-neutral-300 text-sm font-display font-medium leading-relaxed tracking-tight">{role.summary}</p>
       )}
-      <div className="space-y-2">
-        {bullets.map((b, idx) => (
-          <div key={idx} className="grid grid-cols-[22px_1fr]">
-            <div className="pt-1.5">
-              <DiamondBullet />
+      <div className="space-y-3">
+        {bullets.map((b, idx) =>
+          b.type === "plain" ? (
+            <div key={idx} className="grid grid-cols-[22px_1fr]">
+              <div className="pt-1.5">
+                <DotBullet />
+              </div>
+              <div className="text-neutral-300 text-sm leading-relaxed tracking-tight">{b.text}</div>
             </div>
-            <div className="text-neutral-300 text-sm leading-relaxed tracking-tight">
-              {b.bold && <span className="font-semibold">{b.bold}. </span>}
-              {b.text}
+          ) : (
+            <div key={idx} className="space-y-1.5">
+              <div className="grid grid-cols-[22px_1fr]">
+                <div className="pt-1.5">
+                  <DotBullet />
+                </div>
+                <div className="text-neutral-200 text-sm font-medium leading-relaxed tracking-tight">
+                  {b.heading}
+                </div>
+              </div>
+              <div className="space-y-1.5 pl-[22px]">
+                {b.points.map((point, pIdx) => (
+                  <div key={pIdx} className="grid grid-cols-[18px_1fr]">
+                    <div className="pt-1.5">
+                      <span className="block mx-auto size-1 rounded-full bg-neutral-300" />
+                    </div>
+                    <div className="text-neutral-300 text-sm leading-relaxed tracking-tight">{point}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ),
+        )}
       </div>
     </>
   );
@@ -144,11 +157,11 @@ export default function ExperienceTimeline() {
   return (
     <section className="relative flex flex-col gap-8">
       <div className="relative z-10 space-y-2">
-        <h3 className="eyebrow text-sm text-neutral-50">
+        <h2 className="eyebrow text-sm text-neutral-50">
           Experience
-        </h3>
+        </h2>
         <p className="text-neutral-300 text-base tracking-tight">
-          From enterprise AI governance to HR platforms — the roles along the way.
+          {profile.experienceYears} — from enterprise AI governance to HR platforms, the roles along the way.
         </p>
       </div>
 
@@ -163,36 +176,30 @@ export default function ExperienceTimeline() {
               key={`${group.company}-${gi}`}
               className="flex md:flex-row flex-col gap-3 items-start relative md:pl-0 pl-6"
             >
-              <span className="md:pt-6 pt-4 font-mono text-xs font-semibold tracking-wide text-[#6F8CCA] md:w-24 lg:w-28 md:text-right shrink-0">
+              <span className="md:pt-6 pt-4 font-mono text-xs font-semibold tracking-wide text-[#00c8c0] md:w-24 lg:w-28 md:text-right shrink-0">
                 {durationLabel}
               </span>
 
               <div className="md:relative absolute left-0 flex flex-col h-full items-center md:pt-6 pt-4">
                 {!isLastGroup && (
-                  <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full top-6 bg-gradient-to-b from-[#6F8CCA] via-[#6F8CCA]/50 to-[#6F8CCA]/10" />
+                  <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full top-6 bg-neutral-700" />
                 )}
-                <div
-                  className={`relative z-10 size-3.5 rounded-full border-2 ${
-                    gi === 0
-                      ? "bg-[#6F8CCA] border-white/75 scale-110 shadow-[0_0_0_4px_rgba(111,140,202,0.18)]"
-                      : "bg-neutral-900 border-[#6F8CCA]"
-                  }`}
-                />
+                <div className="relative z-10 size-3.5 rounded-full border-2 bg-neutral-800 border-[#00c8c0]" />
               </div>
 
-              <div className="flex-1 relative w-full p-1">
-                <div className="rounded-xl border border-white/10 bg-neutral-800 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] overflow-hidden transition duration-200 hover:border-[#6F8CCA]/40">
-                  <div className="px-4 py-3 border-b border-white/10">
-                    <h4 className="font-semibold text-base text-neutral-50">{group.company}</h4>
+              <div className="flex-1 relative w-full max-w-3xl p-1">
+                <div className="rounded-2xl border border-neutral-700 bg-neutral-800 transition-all duration-150 hover:border-[#00c8c0]/50">
+                  <div className="px-6 py-4 border-b border-neutral-700">
+                    <h3 className="font-display font-semibold text-lg text-neutral-50 tracking-tight">{group.company}</h3>
                   </div>
-                  <div className="divide-y divide-white/10">
+                  <div className="divide-y divide-neutral-700">
                     {group.roles.map((role, ri) => (
                       <details className="acc" open={gi === 0 && ri === 0} key={ri}>
-                        <summary className="flex items-start justify-between gap-5 px-4 py-3 text-neutral-50 font-medium text-sm transition duration-200 hover:bg-white/5">
+                        <summary className="flex items-start justify-between gap-5 px-6 py-4 transition duration-200 hover:bg-[#00c8c0]/10">
                           <RoleHeader role={role} />
                           <Chevron />
                         </summary>
-                        <div className="px-4 pb-4 space-y-3">
+                        <div className="px-6 pb-6 space-y-3">
                           <RoleBody role={role} />
                         </div>
                       </details>

@@ -9,16 +9,16 @@
 }
 
 @theme {
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #d0d0d0;
-  --color-neutral-200: #b9b9b9;
-  --color-neutral-300: #989898;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #666666;
-  --color-neutral-600: #5d5d5d;
-  --color-neutral-700: #484848;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #2b2b2b;
+  --color-neutral-50: #eff6fb;
+  --color-neutral-100: #d5dfe5;
+  --color-neutral-200: #b2bcc5;
+  --color-neutral-300: #8f9da6;
+  --color-neutral-400: #6b7885;
+  --color-neutral-500: #4d5e6c;
+  --color-neutral-600: #384654;
+  --color-neutral-700: #243748;
+  --color-neutral-800: #081c2f;
+  --color-neutral-900: #0a1f34;
 
   --radius: 0.625rem;
 }
@@ -52,34 +52,7 @@ body {
 }
 
 .bg-dots {
-  background-color: #08090b;
-}
-
-/* Marquee edge fade */
-.fade-mask {
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% - var(--gap, 24px)));
-  }
-}
-
-.animate-marquee {
-  animation: marquee var(--duration, 30s) infinite linear;
-}
-
-.group:hover .pause-on-hover {
-  animation-play-state: paused;
+  background-color: #031222;
 }
 
 /* Accordion (experience timeline) */
@@ -92,10 +65,6 @@ details.acc > summary::-webkit-details-marker {
   display: none;
 }
 
-details.acc[open] > summary {
-  box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.4);
-  border-color: rgba(111, 160, 202, 0.5);
-}
 
 details.acc[open] .chev {
   transform: rotate(180deg);
@@ -130,5 +99,17 @@ details.acc[open] .chev {
     opacity: 1;
     animation: none;
   }
+
+  .chev {
+    transition: none;
+  }
+}
+
+a:focus-visible,
+summary:focus-visible,
+button:focus-visible {
+  outline: 2px solid #00c8c0;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 

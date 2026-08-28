@@ -1,12 +1,15 @@
 export const profile = {
   name: "Spandana Kintali",
   role: "Senior Product Manager",
+  experienceYears: "11 years of building enterprise products",
   tagline: "Product Management | ISB | Ex-ServiceNow, OpenText, Oracle",
   status: "On an intentional career break — travelling, upskilling, and figuring out what's next.",
   location: "Hyderabad, Telangana, India",
   coordinates: { latitude: 17.385, longitude: 78.4867 },
   email: "spandanak.2010@gmail.com",
   linkedin: "https://www.linkedin.com/in/spandanakintali",
+  github: "https://github.com/spandanakintali-curiouspm",
+  whatsapp: "https://wa.me/917416191628",
   summary:
     "Passionate about building enterprise products that help businesses execute processes through intuitive, easy-to-use interfaces. Highly motivated product manager with strong business acumen and experience across the product life-cycle — positioning, user experience, marketing, strategy and development.",
 };
@@ -124,13 +127,6 @@ export const experience: ExperienceRole[] = [
       "Awarded \"Employee of the Month\" for handling escalations and delivering fixes on time.",
     ],
   },
-  {
-    company: "ECIL-Rapiscan Limited",
-    title: "Project Trainee",
-    dates: "June 2012 – July 2012 · 2 mos",
-    location: "Hyderabad Area, India",
-    bullets: ["Completed a 1-month industrial (implant) training program in Java application development."],
-  },
 ];
 
 export const education = [
@@ -146,12 +142,26 @@ export const education = [
   },
 ];
 
-export const skills = ["Product Management", "Customer Experience", "Strategy"];
+export const skills = [
+  "Product Management",
+  "Customer Experience",
+  "Product Strategy",
+  "Product Discovery",
+  "Product Roadmap",
+  "User Experience",
+];
 
 export const languages = [
   { name: "English", level: "Professional Working" },
   { name: "Hindi", level: "Professional Working" },
   { name: "Telugu", level: "Native or Bilingual" },
+];
+
+export const stats = [
+  { value: "11", label: "Years of Experience" },
+  { value: "$70M+", label: "ACV Delivered" },
+  { value: "150+", label: "Enterprise Customers" },
+  { value: "4", label: "Companies" },
 ];
 
 export const honors = [

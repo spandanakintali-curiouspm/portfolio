@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Geist_Mono, Permanent_Marker, Fraunces, Space_Grotesk } from "next/font/google";
-import WeatherWidget from "@/components/WeatherWidget";
+import ClockWidget from "@/components/ClockWidget";
 import "./globals.css";
 
 const inter = Inter({
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="bg-dots min-h-full flex flex-col text-neutral-50">
         {children}
-        <WeatherWidget />
+        <ClockWidget />
       </body>
     </html>
   );
