@@ -98,22 +98,11 @@ function Chevron() {
   );
 }
 
-function RoleHeader({
-  role,
-  companyBadge,
-}: {
-  role: ExperienceRole;
-  companyBadge?: string;
-}) {
+function RoleHeader({ role }: { role: ExperienceRole }) {
   return (
     <div className="flex flex-col gap-1">
       <div className="flex md:flex-row flex-col md:gap-3 gap-1 md:items-center items-start">
         <span>{role.title}</span>
-        {companyBadge && (
-          <span className="text-sm font-medium text-neutral-200 px-2 border border-[#6F8CCA]/25 rounded-full flex gap-2 items-center bg-gradient-to-r from-[#6F8CCA]/15 to-transparent">
-            {companyBadge}
-          </span>
-        )}
       </div>
       <p className="text-xs font-mono font-normal tracking-wide text-neutral-400">
         {roleDateRange(role.dates)}
@@ -192,37 +181,24 @@ export default function ExperienceTimeline() {
               </div>
 
               <div className="flex-1 relative w-full p-1">
-                {isGrouped ? (
-                  <div className="rounded-xl border border-white/10 bg-neutral-800 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] overflow-hidden transition duration-200 hover:border-[#6F8CCA]/40">
-                    <div className="px-4 py-3 border-b border-white/10">
-                      <h4 className="font-semibold text-base text-neutral-50">{group.company}</h4>
-                    </div>
-                    <div className="divide-y divide-white/10">
-                      {group.roles.map((role, ri) => (
-                        <details className="acc" open={gi === 0 && ri === 0} key={ri}>
-                          <summary className="flex items-start justify-between gap-5 px-4 py-3 text-neutral-50 font-medium text-sm transition duration-200 hover:bg-white/5">
-                            <RoleHeader role={role} />
-                            <Chevron />
-                          </summary>
-                          <div className="px-4 pb-4 space-y-3">
-                            <RoleBody role={role} />
-                          </div>
-                        </details>
-                      ))}
-                    </div>
+                <div className="rounded-xl border border-white/10 bg-neutral-800 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] overflow-hidden transition duration-200 hover:border-[#6F8CCA]/40">
+                  <div className="px-4 py-3 border-b border-white/10">
+                    <h4 className="font-semibold text-base text-neutral-50">{group.company}</h4>
                   </div>
-                ) : (
-                  <details className="acc" open={gi === 0}>
-                    <summary className="flex items-start justify-between gap-5 border border-white/10 rounded-xl px-4 py-3 bg-neutral-800 text-neutral-50 font-semibold text-base shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] transition duration-200 hover:border-[#6F8CCA]/40">
-                      <RoleHeader role={group.roles[0]} companyBadge={group.company} />
-                      <Chevron />
-                    </summary>
-
-                    <div className="mt-2 px-6 py-4 bg-neutral-800 rounded-2xl border border-[#6F8CCA]/25 shadow-[0_1px_12px_0_rgba(0,0,0,0.4)] space-y-3">
-                      <RoleBody role={group.roles[0]} />
-                    </div>
-                  </details>
-                )}
+                  <div className="divide-y divide-white/10">
+                    {group.roles.map((role, ri) => (
+                      <details className="acc" open={gi === 0 && ri === 0} key={ri}>
+                        <summary className="flex items-start justify-between gap-5 px-4 py-3 text-neutral-50 font-medium text-sm transition duration-200 hover:bg-white/5">
+                          <RoleHeader role={role} />
+                          <Chevron />
+                        </summary>
+                        <div className="px-4 pb-4 space-y-3">
+                          <RoleBody role={role} />
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           );
