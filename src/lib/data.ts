@@ -1,8 +1,12 @@
 export const profile = {
   name: "Spandana Kintali",
-  role: "Senior Product Manager",
+  titles: [
+    "Senior Product Manager",
+    "Founding PM, AI Governance",
+    "0-to-1 Product Builder",
+    "Enterprise SaaS Leader",
+  ],
   experienceYears: "12 years of building enterprise products",
-  tagline: "Product Management | ISB | Ex-ServiceNow, OpenText, Oracle",
   status: "On an intentional career break — travelling, upskilling, and figuring out what's next.",
   location: "Hyderabad, Telangana, India",
   coordinates: { latitude: 17.385, longitude: 78.4867 },
@@ -11,7 +15,7 @@ export const profile = {
   github: "https://github.com/spandanakintali-curiouspm",
   whatsapp: "https://wa.me/917416191628",
   summary:
-    "Senior Product Manager with 11+ years in technology, including 7+ years building and scaling enterprise SaaS products across AI governance, HR technology, and content management. Founding PM for ServiceNow's AI Control Tower, holding a patent-pending AI discovery capability; scaled Manager Hub to ~1,200 global customers and grew a $70M ACV HR platform to 150+ enterprise accounts. Combines a Computer Science engineering foundation with an ISB postgraduate degree in Strategy & Leadership.",
+    "I love turning complex, ambiguous problems into products people actually enjoy using. As founding PM for ServiceNow's AI Control Tower, I helped shape enterprise AI governance from the ground up, filing a patent along the way for its core AI discovery capability. Earlier, I built Manager Hub from scratch to ~1,200 global customers and grew a $70M ACV HR platform to 150+ enterprise accounts. 11 years into a career that started in engineering, I bring a Computer Science foundation and an ISB postgraduate in Strategy & Leadership to every product I build.",
 };
 
 export type ExperienceBullet = string;

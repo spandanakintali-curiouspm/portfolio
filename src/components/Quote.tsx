@@ -44,7 +44,7 @@ export default function Quote() {
           Let&apos;s build something meaningful.
         </h2>
         <p className="mt-4 text-neutral-300 text-base md:text-lg leading-relaxed max-w-xl">
-          Open to leadership roles across India and globally — product management, AI transformation and platform delivery.
+          Open to senior product leadership roles across India and globally, building AI governance, platform and enterprise SaaS products that make ambiguous problems simple.
         </p>
       </div>
 
