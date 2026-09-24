@@ -71,7 +71,7 @@ export default function ProfileIntro() {
         >
           <HighlightText
             text={profile.summary}
-            highlights={["enterprise products", "product life-cycle"]}
+            highlights={["AI Control Tower", "$70M ACV HR platform"]}
           />
         </p>
 
@@ -86,7 +86,7 @@ export default function ProfileIntro() {
 
       <div
         style={{ "--delay": "0s" } as React.CSSProperties}
-        className="animate-fade-in-up size-32 md:size-[256px] rounded-lg overflow-hidden z-10 relative transition-transform duration-300 hover:scale-105 shrink-0"
+        className="animate-fade-in-up size-32 md:size-[256px] rounded-2xl border border-neutral-700 bg-neutral-800 overflow-hidden z-10 relative transition duration-200 hover:border-[#00c8c0]/50 hover:-translate-y-0.5 shrink-0"
       >
         <Image
           src="/avatar.jpg"

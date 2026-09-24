@@ -1,7 +1,7 @@
 export const profile = {
   name: "Spandana Kintali",
   role: "Senior Product Manager",
-  experienceYears: "11 years of building enterprise products",
+  experienceYears: "12 years of building enterprise products",
   tagline: "Product Management | ISB | Ex-ServiceNow, OpenText, Oracle",
   status: "On an intentional career break — travelling, upskilling, and figuring out what's next.",
   location: "Hyderabad, Telangana, India",
@@ -11,7 +11,7 @@ export const profile = {
   github: "https://github.com/spandanakintali-curiouspm",
   whatsapp: "https://wa.me/917416191628",
   summary:
-    "Passionate about building enterprise products that help businesses execute processes through intuitive, easy-to-use interfaces. Highly motivated product manager with strong business acumen and experience across the product life-cycle — positioning, user experience, marketing, strategy and development.",
+    "Senior Product Manager with 11+ years in technology, including 7+ years building and scaling enterprise SaaS products across AI governance, HR technology, and content management. Founding PM for ServiceNow's AI Control Tower, holding a patent-pending AI discovery capability; scaled Manager Hub to ~1,200 global customers and grew a $70M ACV HR platform to 150+ enterprise accounts. Combines a Computer Science engineering foundation with an ISB postgraduate degree in Strategy & Leadership.",
 };
 
 export type ExperienceBullet = string;
@@ -33,15 +33,15 @@ export const experience: ExperienceRole[] = [
     dates: "August 2024 – April 2026 · 1 yr 9 mos",
     location: "Hyderabad, Telangana, India",
     summary:
-      "Built a Zero-to-One AI Control Tower (AICT) giving enterprises complete visibility into their AI footprint, enabling them to manage the full lifecycle of AI assets while identifying and mitigating risks associated with AI investments.",
+      "Founding PM for AI Control Tower (AICT), ServiceNow's platform for enterprise AI governance — joined pre-launch and drove it from Early Access through General Availability, giving organizations visibility into their AI footprint and control over AI lifecycle and risk.",
     bullets: [
-      "Conducted user, domain and competitive research to capture governance process and key personas.",
-      "Led successful delivery of 3P controls in AICT, integrating third-party model provider strategies & empowering customers with data-driven compliance insights for AI systems across Zurich, Australia, and Brazil markets.",
-      "Drove the Long-Term Stability (LTS) model strategy for the financial services sector, enabling customer choice for stable AI models and coordinating cross-team efforts to resolve implementation gaps and align product priorities.",
-      "Established and managed an audit framework for AICT, enabling customers to efficiently handle internal and external audits by capturing comprehensive audit histories and change chains for AI system deployments.",
-      "Championed exception management frameworks for AI model providers and datasets, enhancing the governance framework and compliance posture for companies implementing AICT.",
-      "Spearheaded observability initiatives in AICT, developing proof-of-concept solutions to surface actionable insights on AI system health and enable proactive recommendations for product owners and builders.",
-      "Recognized for leadership and strategic vision with multiple kudos from cross-functional stakeholders; served as Product Advisor during the Create UTG 2025 Hackathon, guiding teams to refine and pitch AI governance solutions.",
+      "Partnered with 8 enterprise design partners across financial services, healthcare and other regulated industries to define AI governance personas and jobs-to-be-done, shaping AICT's first version.",
+      "Orchestrated a single-release rollout of third-party model-provider controls across 6 teams and multiple products, enabling governance enforcement across regulated and non-regulated markets for ServiceNow's entire Pro Plus customer base.",
+      "Drove execution of ServiceNow's Long-Term Stability (LTS) model strategy for financial services, coordinating 6 teams to translate strategy into AICT capabilities supporting a leadership-identified $300M upsell opportunity.",
+      "Filed a patent application as named inventor for a CMDB-based AI asset inventory design underpinning AICT's core AI discovery capability.",
+      "Advanced AICT's enterprise AI governance strategy by securing Snowflake and Hugging Face licensing approvals and translating platform ecosystem strategy into PRDs delivered through Service Graph Connectors.",
+      "Owned the product experience for an AI agent that recommends missing asset details, evaluating source credibility and designing an inline, steward-approved recommendation flow to close gaps in the AI asset inventory.",
+      "Served as Product Advisor for ServiceNow's Create UTG 2025 Hackathon, guiding teams to refine and pitch AI governance solutions.",
     ],
   },
   {
@@ -50,12 +50,27 @@ export const experience: ExperienceRole[] = [
     dates: "November 2021 – July 2024 · 2 yrs 9 mos",
     location: "Hyderabad, Telangana, India",
     summary:
-      "Managed the strategic vision and success of the Employee Document Management product for the HR domain — generating $70M ACV across 150+ enterprise customers.",
-    bullets: [
-      "Spearheaded strategic vision and product roadmap for the enterprise document manager module of the HRSD product across 4 major releases, achieving product-market fit across the complete Hire-to-Retire HR lifecycle and growing the sales pipeline by 40%.",
-      "Collaborated with sales, senior leadership & clients, providing strategic support with tailored collateral, product demos and presentations.",
-      "Helped successfully close 10+ deals over $30M, further contributing to multiple upgrade deals and business growth.",
-      "Engaged with product leadership & industry leaders to ensure roadmap alignment and incorporate market feedback into the product.",
+      "Owned two major HRSD workstreams: Manager Hub's team-skills intelligence and Employee Document Management, spanning 0-to-1 delivery and a $70M ACV product serving 150+ enterprise customers.",
+    subBullets: [
+      {
+        heading:
+          "Manager Hub – Team Skills Intelligence: Owned the 0-to-1 strategy and delivery giving managers visibility into team skill gaps and workforce development needs, shipping to General Availability in early 2024 and reaching ~1,200 global customers",
+        points: [
+          "Led a cross-functional team of 8 engineers, 1 UX designer and 1 visual designer from discovery through General Availability, driving product direction, execution and launch.",
+          "Conducted customer research and competitive benchmarking against Fuel50, Eightfold AI and Hitch, translating fragmented, spreadsheet-based skill-tracking pain points into product vision and a differentiated roadmap.",
+          "Partnered with Account Executives and Customer Success to position Team Skills Intelligence in renewal conversations, supporting renewal outcomes across multiple strategic HRSD accounts.",
+          "Partnered with platform and product engineering to scope API dependencies and integrate skill data with Learning and Growth Plan applications, unifying the view of team-member development for managers.",
+        ],
+      },
+      {
+        heading:
+          "Employee Document Management: Owned the strategic vision and product success of a $70M ACV product serving 150+ enterprise customers across the Hire-to-Retire HR lifecycle",
+        points: [
+          "Spearheaded product vision and roadmap across 4 major releases, achieving product-market fit and contributing to 40% growth in sales pipeline.",
+          "Partnered with Sales, senior leadership and enterprise customers through tailored collateral, product demonstrations and executive presentations.",
+          "Supported the closure of 10+ deals worth $30M+, contributing to expansion and upgrade opportunities across existing customers.",
+        ],
+      },
     ],
   },
   {
@@ -79,25 +94,35 @@ export const experience: ExperienceRole[] = [
     subBullets: [
       {
         heading:
-          "Launched Event Action Center, a solution accelerator executing actions from events triggered by leading systems with 3 out-of-the-box integrations",
+          "Launched Event Action Center, a code-free solution accelerator that executes automated actions from events triggered by leading systems",
         points: [
-          "Led a team of 8 to productise the feature set across multiple releases using Agile methodologies.",
-          "Collaborated with UX and VISD to build an intuitive solution for Rule editors and Action plan editors.",
+          "Facilitated acquisition of 10+ new customers with an intuitive, easy-to-configure automation engine.",
+          "Improved admin productivity by 40%, cutting business-process configuration time from ~2 days to ~30 minutes.",
+          "Negotiated business partnerships with CRM and ERP vendors, delivering 3 out-of-the-box integrations.",
         ],
       },
       {
         heading:
-          "Conceptualised a solution for onboarding prospective client employees using the Enterprise Content Management platform",
+          "Owned the product roadmap for the enterprise collaboration module in Content Suite across 2 major releases",
         points: [
-          "Devised a GTM strategy to acquire customers reliant on capture solutions to process information from multiple users.",
-          "Integrated in-house offerings and facilitated cross-selling opportunities for the Global Sales team.",
+          "Increased module adoption by 60% by ideating and shipping a smart reminders widget, used by 80% of customers, paired with smart email notifications.",
+          "Cut legacy-UI maintenance costs by migrating premium customers from Classic to Smart UI.",
         ],
       },
       {
         heading:
-          "Managed the product roadmap for enterprise collaboration features in the Content Suite platform across 2 major releases",
+          "Conceptualised a one-stop solution to digitize and automate onboarding of prospective employees across organizations",
         points: [
-          "Led a team of 6 to deliver features and resolve escalations, driving customer retention and renewal of premium licenses.",
+          "Implemented the solution and won a $6.7M deal by liaising with Sales, Consulting and Engineering.",
+        ],
+      },
+      {
+        heading:
+          "Managed stakeholder relationships across 20+ customers worldwide to resolve business requirements and cloud performance issues",
+        points: [
+          "Partnered with architects and the cloud team to fast-track health-monitoring dashboards that check server status.",
+          "Cut severe-outage resolution time from ~2 hours to ~20 minutes, strengthening customer confidence and retention.",
+          "Led a product team of 8 (with UX and VISD) across releases using Agile methodologies, and ran product breakout sessions for partners, customer support and sales.",
         ],
       },
     ],
@@ -105,26 +130,24 @@ export const experience: ExperienceRole[] = [
   {
     company: "Oracle",
     title: "Applications Developer II",
-    dates: "December 2015 – February 2018 · 2 yrs 3 mos",
+    dates: "January 2016 – February 2018 · 2 yrs 1 mo",
     location: "Hyderabad Area, India",
     bullets: [
-      "Designed an innovative tool to automate Database Management activities for handling critical issues.",
-      "Led a team of 4 to develop the tool, later adopted organisation-wide across multiple products.",
-      "Reduced team effort by 70% in maintaining highly confidential customer data through automation.",
-      "Developed new features for Primavera Unifier and collaborated with global teams using Scrum.",
-      "Awarded \"Employee of the Month\" for the productivity gains driven by the automation initiative.",
+      "Architected a smart cloud-based tool that identifies servers and restores and masks customer databases, institutionalised across 7 teams at Oracle.",
+      "Automated 90% of the database-management workflow, saving $60K per year (1,000 man-days).",
+      "Ideated a user-activity auditing feature to track workflow changes and ensure zero data breach during product migrations.",
+      "Improved credibility of Unifier's data-management systems, preventing an estimated $10M in potential data-sanctity losses.",
     ],
   },
   {
     company: "Oracle",
     title: "Applications Developer",
-    dates: "July 2014 – November 2015 · 1 yr 5 mos",
+    dates: "June 2014 – December 2015 · 1 yr 6 mos",
     location: "Hyderabad Area, India",
     bullets: [
-      "Worked on core functionality of Primavera Unifier, a scalable cloud-based Project Life Cycle Management solution.",
-      "Resolved highly critical issues, debugging and delivering code fixes for customers.",
-      "Designed server architecture to host customer databases and developed secured systems to maintain data.",
-      "Awarded \"Employee of the Month\" for handling escalations and delivering fixes on time.",
+      "Collaborated with cross-functional teams to develop the business logic of the cost management module in Primavera Unifier.",
+      "Revamped the UI using OJET and successfully migrated 75% (150/200) of customers to the latest version of the product.",
+      "Selected as one of 25 \"Future Leaders\" out of 700 employees across Oracle's Global Business Units as part of a mentorship program.",
     ],
   },
 ];
@@ -137,7 +160,7 @@ export const education = [
   },
   {
     school: "Amrita Vishwa Vidyapeetham",
-    degree: "B.Tech, Computer Science",
+    degree: "B.Tech, Computer Science & Engineering",
     dates: "2010 – 2014",
   },
 ];
@@ -158,14 +181,18 @@ export const languages = [
 ];
 
 export const stats = [
-  { value: "11", label: "Years of Experience" },
+  { value: "12", label: "Years of Experience" },
   { value: "$70M+", label: "ACV Delivered" },
   { value: "150+", label: "Enterprise Customers" },
   { value: "4", label: "Companies" },
 ];
 
 export const honors = [
-  { title: "Employee of the Month", issuer: "Oracle · Automation initiative" },
-  { title: "Employee of the Month", issuer: "Oracle · Escalation handling" },
-  { title: "University Topper", issuer: "Amrita Vishwa Vidyapeetham" },
+  { title: "Named Inventor, Patent Application", issuer: "ServiceNow · CMDB-based AI asset inventory design" },
+  { title: "National Runner-Up", issuer: "ISB Advaita Technovision 2018 · Agri-tech innovation challenge" },
+  { title: "Spot Award", issuer: "OpenText · Strategic vision contribution" },
+  { title: "Future Leaders Program", issuer: "Oracle · Top 25 of 700 employees" },
+  { title: "2nd Rank, B.Tech CSE", issuer: "Amrita Vishwa Vidyapeetham · Top 0.53% of batch" },
+  { title: "ISB Brand Ambassador", issuer: "Indian School of Business · Top 8% of cohort" },
+  { title: "CSR Volunteer", issuer: "Oracle · Blood donation camps & NGO charity events" },
 ];

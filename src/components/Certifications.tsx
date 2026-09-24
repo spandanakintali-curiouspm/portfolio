@@ -38,7 +38,8 @@ function GraduationCapIcon() {
 }
 
 function honorIcon(title: string) {
-  return title.toLowerCase().includes("topper") ? <GraduationCapIcon /> : <MedalIcon />;
+  const lower = title.toLowerCase();
+  return lower.includes("topper") || lower.includes("rank") ? <GraduationCapIcon /> : <MedalIcon />;
 }
 
 export default function Certifications() {
