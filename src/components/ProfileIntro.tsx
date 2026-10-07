@@ -72,7 +72,7 @@ export default function ProfileIntro() {
         >
           <HighlightText
             text={profile.summary}
-            highlights={["AI Control Tower", "$70M ACV HR platform"]}
+            highlights={["AI Control Tower", "$70M ACV HR product"]}
           />
         </p>
 

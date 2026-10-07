@@ -6,7 +6,7 @@ export const profile = {
     "0-to-1 Product Builder",
     "Enterprise SaaS Leader",
   ],
-  experienceYears: "12 years of building enterprise products",
+  experienceYears: "11+ years of building enterprise products",
   status: "On an intentional career break — travelling, upskilling, and figuring out what's next.",
   location: "Hyderabad, Telangana, India",
   coordinates: { latitude: 17.385, longitude: 78.4867 },
@@ -15,7 +15,7 @@ export const profile = {
   github: "https://github.com/spandanakintali-curiouspm",
   whatsapp: "https://wa.me/917416191628",
   summary:
-    "I love turning complex, ambiguous problems into products people actually enjoy using. As founding PM for ServiceNow's AI Control Tower, I helped shape enterprise AI governance from the ground up, filing a patent along the way for its core AI discovery capability. Earlier, I built Manager Hub from scratch to ~1,200 global customers and grew a $70M ACV HR platform to 150+ enterprise accounts. 11 years into a career that started in engineering, I bring a Computer Science foundation and an ISB postgraduate in Strategy & Leadership to every product I build.",
+    "I love turning complex, ambiguous problems into products people actually enjoy using. As founding PM for ServiceNow's AI Control Tower, I helped shape enterprise AI governance from the ground up, filing a patent along the way for its core AI discovery capability. Earlier, I owned the 0-to-1 launch of Team Skills Intelligence within Manager Hub (~1,200 global customers) and the roadmap for a $70M ACV HR product serving 150+ enterprise customers. 11+ years into a career that started in engineering, I bring a Computer Science foundation and an ISB postgraduate in Strategy & Leadership to every product I build.",
 };
 
 export type ExperienceBullet = string;
@@ -171,6 +171,10 @@ export const education = [
 
 export const skills = [
   "Product Management",
+  "AI Governance",
+  "Enterprise AI",
+  "Platform Strategy",
+  "0-to-1 Product Development",
   "Customer Experience",
   "Product Strategy",
   "Product Discovery",
@@ -185,7 +189,7 @@ export const languages = [
 ];
 
 export const stats = [
-  { value: "12", label: "Years of Experience" },
+  { value: "11+", label: "Years of Experience" },
   { value: "$70M+", label: "ACV Delivered" },
   { value: "150+", label: "Enterprise Customers" },
   { value: "4", label: "Companies" },
