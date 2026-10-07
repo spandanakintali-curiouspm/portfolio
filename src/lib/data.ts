@@ -15,7 +15,7 @@ export const profile = {
   github: "https://github.com/spandanakintali-curiouspm",
   whatsapp: "https://wa.me/917416191628",
   summary:
-    "I love turning complex, ambiguous problems into products people actually enjoy using. As founding PM for ServiceNow's AI Control Tower, I helped shape enterprise AI governance from the ground up, filing a patent along the way for its core AI discovery capability. Earlier, I owned the 0-to-1 launch of Team Skills Intelligence within Manager Hub (~1,200 global customers) and the roadmap for a $70M ACV HR product serving 150+ enterprise customers. 11+ years into a career that started in engineering, I bring a Computer Science foundation and an ISB postgraduate in Strategy & Leadership to every product I build.",
+    "I love turning complex, ambiguous problems into products people actually enjoy using. As founding PM for ServiceNow's AI Control Tower, I helped shape enterprise AI governance from the ground up, filing a patent application along the way for its core AI discovery capability. Earlier, I owned the 0-to-1 launch of Team Skills Intelligence within Manager Hub (~1,200 global customers) and the roadmap for a $70M ACV HR product serving 150+ enterprise customers. 11+ years into a career that started in engineering, I bring a Computer Science foundation and an ISB postgraduate in Strategy & Leadership to every product I build.",
 };
 
 export type ExperienceBullet = string;
