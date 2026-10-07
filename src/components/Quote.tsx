@@ -38,7 +38,7 @@ const links = [
 
 export default function Quote() {
   return (
-    <section className="py-4 grid md:grid-cols-2 gap-8 items-start">
+    <section id="reach-out" className="py-4 grid md:grid-cols-2 gap-8 items-start scroll-mt-20">
       <div>
         <h2 className="font-display font-bold text-3xl md:text-5xl leading-tight tracking-tight text-neutral-50 max-w-2xl">
           Let&apos;s build something meaningful.

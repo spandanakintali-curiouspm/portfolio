@@ -198,6 +198,11 @@ export const stats = [
 export interface CaseStudy {
   title: string;
   problem: string;
+  whoItsFor?: string;
+  challenge?: {
+    heading: string;
+    description: string;
+  };
   role: string;
   insight?: {
     heading: string;
@@ -253,6 +258,77 @@ export const caseStudies: CaseStudy[] = [
     outcome: "Shipped to General Availability.",
     nextSteps:
       "Had I continued on the product, my next step would be handling conflicting results across sources. Rather than having the agent pick a winner, I'd show the conflicts side by side with their sources and let the steward decide the best course.",
+  },
+  {
+    title: "Giving enterprises control over which AI models run their AI systems",
+    problem:
+      "ServiceNow's out-of-the-box skills, agents, and agentic workflows were opening up to four model providers (ServiceNow, Claude, Google, and Microsoft Azure), so customers could choose a model per AI system. Choice creates compliance risk. Rules on where data can be processed and which providers are permitted differ by country and keep changing. Without controls, a developer could deploy an AI system on a provider the organization's compliance team never approved.",
+    whoItsFor:
+      "AI stewards and AI centers of excellence set the policy. Developers and admins who build and deploy AI systems have to stay within it.",
+    challenge: {
+      heading: "One policy, six teams.",
+      description:
+        "A control only works if it holds everywhere an AI system can be activated. Six teams each owned part of that path: the control surface, the service that manages available providers, the infrastructure that routes model calls, and the three build and admin surfaces where AI systems get activated. A steward shouldn't have to set the same policy in several places, because gaps between them would be compliance gaps.",
+    },
+    role:
+      "I coordinated the six teams around a single set of cross-product requirements, so the policy a steward set would mean the same thing on every surface. I also worked with design on the UX patterns. Engineering teams owned the architecture and the build.",
+    decisions: [
+      {
+        label: "Set policy once, enforce it everywhere.",
+        description:
+          "Stewards configure allowed providers in AI Control Tower. That setting flows to every surface that activates AI systems, and each one enforces it.",
+      },
+      {
+        label: "Build market rules into the controls.",
+        description:
+          "Provider availability depends on country and routing. Where in-country processing applies, routing is fixed and fewer providers are available. Elsewhere, regional routing opens up all four. Stewards only choose from what's actually available in their market.",
+      },
+      {
+        label: "Show the impact before a policy takes effect.",
+        description:
+          "When a steward changes allowed providers or routing, an impact summary shows how many AI systems stay supported, how many would fall back to a provider that's no longer allowed (and become non-compliant), and how many couldn't activate. A matrix then lists each AI system with its provider status. This translates a policy, which is a rule, into a concrete outcome on real systems before anything changes, so stewards, developers, and admins can understand the impact intuitively and decide the next step.",
+      },
+    ],
+    outcome:
+      "Built across April–June 2025 and made available to all Pro Plus customers in July 2025. It covers skills, agents, and agentic workflows, for both regulated and non-regulated markets, and kept improving in later releases.",
+  },
+  {
+    title: "Helping managers see and grow their team's skills",
+    problem:
+      "Managers are expected to develop their teams, but most have no reliable view of what skills their team actually has. In my customer interviews, one manager of eight described keeping it all in a spreadsheet, and others asked for a dashboard that showed skills, proficiency levels, and gaps in one place.",
+    whoItsFor:
+      "Managers, who need to understand their team's strengths and gaps and support their people's development. Employees and HR benefit indirectly, because the skills data feeds their learning and growth plans.",
+    challenge: {
+      heading: "Trustworthy skills data across several teams.",
+      description:
+        "A skills dashboard is only as good as the data behind it. Skills were partly self-reported, so scores built on them would mislead. The feature also depended on several teams: skill profiles and job architecture on the platform side, and learning and growth plans on the development side. If those pieces didn't connect, managers would see numbers with no way to act on them.",
+    },
+    role:
+      "I led a team of 8 engineers, 1 UX designer, and 1 visual designer from discovery through General Availability. I ran manager interviews with our research team, benchmarked competitors, wrote the use cases, and defined the dependencies with the platform and Employee Growth & Development teams.",
+    decisions: [
+      {
+        label: "Start at the team, then drill down.",
+        description:
+          "I benchmarked Fuel50, Eightfold AI, and Hitch. The strongest tools paired team-level insight with a way to drill into individuals, so I designed three levels: a team overview of strengths, growth areas, and skill distribution; a matrix of skills across team members; and a detailed view per employee.",
+      },
+      {
+        label: "Score only what the manager has validated.",
+        description:
+          "The skill match score counts only manager-validated skills, and the number of unvalidated skills appears alongside it as a prompt to validate. Because validating one skill at a time doesn't scale, managers can validate all of a person's skills, or all team members for one skill, in a single action.",
+      },
+      {
+        label: "Connect skills to development.",
+        description:
+          "For each skill, managers see ongoing and past learning and growth-plan activity, can assign learning directly, and can jump to the related growth plan. This took a dependency on the learning team to map content to skills.",
+      },
+      {
+        label: "Be explicit about what value depends on.",
+        description:
+          "The widgets only populate if skills are implemented, employees add proficiencies, and managers validate. I wrote this into the customer adoption guidance so customers knew what to set up first.",
+      },
+    ],
+    outcome:
+      "Shipped to General Availability in early 2024 as part of Manager Hub, which is deployed across ~1,200 global customers.",
   },
 ];
 

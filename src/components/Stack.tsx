@@ -24,7 +24,7 @@ function LanguageTile({ label }: { label: string }) {
 
 export default function Stack() {
   return (
-    <section className="relative flex flex-col gap-8">
+    <section id="skills" className="relative flex flex-col gap-8 scroll-mt-20">
       <div className="relative z-10 space-y-2">
         <h2 className="eyebrow text-sm text-neutral-50">
           Stack

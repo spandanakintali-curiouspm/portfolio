@@ -32,6 +32,23 @@ function CaseStudyBody({ study }: { study: CaseStudy }) {
         <p className="text-neutral-300 text-sm leading-relaxed tracking-tight">{study.problem}</p>
       </div>
 
+      {study.whoItsFor && (
+        <div className="space-y-1.5">
+          <SectionLabel>Who it&apos;s for</SectionLabel>
+          <p className="text-neutral-300 text-sm leading-relaxed tracking-tight">{study.whoItsFor}</p>
+        </div>
+      )}
+
+      {study.challenge && (
+        <div className="space-y-1.5">
+          <SectionLabel>The challenge</SectionLabel>
+          <p className="text-neutral-300 text-sm leading-relaxed tracking-tight">
+            <span className="font-medium text-neutral-200">{study.challenge.heading}</span>{" "}
+            {study.challenge.description}
+          </p>
+        </div>
+      )}
+
       <div className="space-y-1.5">
         <SectionLabel>My role</SectionLabel>
         <p className="text-neutral-300 text-sm leading-relaxed tracking-tight">{study.role}</p>
@@ -89,7 +106,7 @@ function CaseStudyBody({ study }: { study: CaseStudy }) {
 
 export default function CaseStudies() {
   return (
-    <section className="relative flex flex-col gap-8">
+    <section id="case-studies" className="relative flex flex-col gap-8 scroll-mt-20">
       <div className="relative z-10 space-y-2">
         <h2 className="eyebrow text-sm text-neutral-50">Case Studies</h2>
         <p className="text-neutral-300 text-base tracking-tight">
@@ -97,15 +114,15 @@ export default function CaseStudies() {
         </p>
       </div>
 
-      <div className="relative z-10 flex flex-col gap-4">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 items-start gap-4">
         {caseStudies.map((study, idx) => (
           <div
             key={idx}
             className="rounded-2xl border border-neutral-700 bg-neutral-800 transition-all duration-150 hover:border-[#00c8c0]/50"
           >
-            <details className="acc" open={idx === 0}>
-              <summary className="flex items-start justify-between gap-5 px-6 py-4 transition duration-200 hover:bg-[#00c8c0]/10">
-                <h3 className="font-sans font-bold text-xl text-neutral-50 tracking-tight leading-snug">
+            <details className="acc">
+              <summary className="flex min-h-[72px] items-center justify-between gap-5 px-6 py-4 transition duration-200 hover:bg-[#00c8c0]/10">
+                <h3 className="font-display font-medium text-base text-neutral-50 tracking-wide leading-snug">
                   {study.title}
                 </h3>
                 <Chevron />
