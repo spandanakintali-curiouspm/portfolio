@@ -195,6 +195,67 @@ export const stats = [
   { value: "4", label: "Companies" },
 ];
 
+export interface CaseStudy {
+  title: string;
+  problem: string;
+  role: string;
+  insight?: {
+    heading: string;
+    examples: { label: string; description: string }[];
+  };
+  decisions: { label: string; description: string }[];
+  outcome: string;
+  nextSteps?: string;
+}
+
+export const caseStudies: CaseStudy[] = [
+  {
+    title: "Turning incomplete AI records into trustworthy ones, one field at a time",
+    problem:
+      "AI Control Tower keeps an inventory of an enterprise's AI agents, use cases, and models, each with metadata across many fields, such as description, provider, and model card. Rule-based detection flagged records with missing fields, but a flag doesn't tell a steward what belongs in the field. Governance is only as good as the inventory behind it, so every gap in a record was a gap in oversight.",
+    role:
+      "I owned the product experience: which fields to enrich, how each one gets filled, how recommendations appear, and how they're approved. Engineering built the agent on ServiceNow's existing agent framework.",
+    insight: {
+      heading:
+        "With this many fields, one approach couldn't fit all of them. I sorted fields by where a trustworthy answer can come from. Three examples show the range:",
+      examples: [
+        {
+          label: "Description",
+          description: "generated internally from the name of the agent or use case. No outside lookup is needed.",
+        },
+        {
+          label: "Provider",
+          description: "retrieved from public AI directories and aggregators such as OpenRouter and There's An AI For That.",
+        },
+        {
+          label: "Model card",
+          description: "retrieved from the provider's own website, the primary source.",
+        },
+      ],
+    },
+    decisions: [
+      {
+        label: "Match the method to the field.",
+        description:
+          "Generating a description, identifying a provider, and locating a model card are different problems with different failure modes, so each got its own approach.",
+      },
+      {
+        label: "Choose sources on accuracy, breadth, and depth of information.",
+        description:
+          "Where no authoritative internal source exists, the agent relies on well-known public directories like OpenRouter and There's An AI For That. For model cards, it goes straight to the provider.",
+      },
+      {
+        label: "Recommend, don't auto-apply.",
+        description:
+          "Suggestions appear inline on the asset record, and a steward approves them before anything is written. This keeps a person accountable for what enters the inventory, and it's the safeguard for sources that are good but imperfect.",
+      },
+    ],
+    outcome: "Shipped to General Availability.",
+    nextSteps:
+      "Had I continued on the product, my next step would be handling conflicting results across sources. Rather than having the agent pick a winner, I'd show the conflicts side by side with their sources and let the steward decide the best course.",
+  },
+];
+
 export const honors = [
   { title: "Named Inventor, Patent Application", issuer: "ServiceNow · CMDB-based AI asset inventory design" },
   { title: "National Runner-Up", issuer: "ISB Advaita Technovision 2018 · Agri-tech innovation challenge" },

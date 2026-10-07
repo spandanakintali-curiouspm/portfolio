@@ -194,7 +194,7 @@ export default function ExperienceTimeline() {
                   </div>
                   <div className="divide-y divide-neutral-700">
                     {group.roles.map((role, ri) => (
-                      <details className="acc" open={gi === 0 && ri === 0} key={ri}>
+                      <details className="acc" key={ri}>
                         <summary className="flex items-start justify-between gap-5 px-6 py-4 transition duration-200 hover:bg-[#00c8c0]/10">
                           <RoleHeader role={role} />
                           <Chevron />

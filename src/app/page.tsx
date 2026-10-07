@@ -1,3 +1,4 @@
+import CaseStudies from "@/components/CaseStudies";
 import Certifications from "@/components/Certifications";
 import Education from "@/components/Education";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
@@ -18,6 +19,7 @@ export default function Home() {
             <ProfileIntro />
           </div>
           <ExperienceTimeline />
+          <CaseStudies />
           <Stack />
           <Stats />
           <Certifications />
